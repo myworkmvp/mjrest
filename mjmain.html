@@ -1,0 +1,318 @@
+#<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Foldit:wght@500&family=Poppins&family=Roboto+Condensed&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./bootstrap.min.css"> 
+<style type="text/css">
+    *{
+        margin:0px;
+        padding:0px;
+        font-family:poppins;
+    }
+    :root{
+        --red:#FF1D46;
+        --black:#202020;
+        --white:#FFFFFF;
+        --yellow:#FFC815;
+    }
+    body{
+        background-color: var(--black);
+    }
+    img{
+            position:fixed;
+            left: 0;
+            width:100%;
+            height:800px;
+            filter:blur(4px);
+            background-color: var(--black);
+            opacity: 0.8;
+            z-index:-1;
+        }
+    .head{
+        display:flex;
+        background-color:var(--red);
+        width:100%;
+        position: absolute;
+        top:0;
+    }
+    .head>h1{
+        padding:1%;
+        color:var(--white); 
+        font-weight:900;
+    }
+    .bi-egg{
+        color:var(--white);
+        background-color:var(--black);
+        padding:5px;
+        font-size:25px;
+    }
+    .h1>span{
+        color:var(--black);
+        font-size:25px;
+
+    }
+    .menu{
+        color:var(--white);
+        text-align:center;
+        font-weight:900;
+        font-size:30px;
+        padding-top:8%;
+    }
+    table{
+        border-collapse:collapse;
+        color:var(--black);
+        background-color:var(--yellow) ;
+        
+    }
+    th,td{
+          border:2px solid var(--white);
+          padding: 4px;
+          text-align:center;
+          font-weight:900;
+    }
+    th{
+        font-weight:300;
+        background-color:var(--black);
+        color:var(--yellow);
+        font-size:25px;
+    }
+    input{
+        width:30px;
+        color:var(--black);
+        font-weight:900;
+        width: 50px;
+    }
+    input::-webkit-inner-spin-button,
+    input::-webkit-outer-spin-button
+    {
+        -webkit-appearance:none;
+    }
+    .foot{
+        background-color:var(--red);
+    }
+    h4{
+        font-size:30px;
+        color:var(--black);
+        font-weight:900;
+        padding:10px;
+    }
+    .foot>p{
+        color:var(--white);
+        font-weight:800;
+        padding:0px 20px;
+    }
+    button{
+        padding:5px;
+        font-weight:700;
+        border-radius:10px;
+        margin: 5%;
+        color: var(--white);
+        background-color: var(--red);
+        border: 3px solid var(--white);
+    }
+    a{
+        text-decoration: none;
+        color: var(--white);
+    }
+    button:hover{
+        background-color:black;
+        color:white;
+        outline:none;
+    }
+    h3{
+        font-size:15px;
+        color: var(--white);
+    }
+    .paypop{
+        visibility: visible;
+        position: relative;
+        color: var(--white);
+    }
+    p{
+        font-size: 20px;
+        font-weight: 900;
+        text-decoration: underline;
+    }
+    .reviewpop{
+        visibility: hidden;
+    }
+    .review{
+        visibility: visible;
+    }
+    .pay{
+        visibility: hidden;
+    }
+   .inpop{
+        visibility: hidden;
+    }
+    .in{
+        visibility: visible;
+       
+    }
+
+</style>
+</head>
+
+<body>
+    <img src="./masala.jpg" alt="">
+    <div class="head">
+       <i class="bi bi-egg"></i>
+       <h1>MJ Restaurant</h1>
+   </div>
+   <h3 class="menu">Menu List</h3>
+   <div class="container">
+   <div class="row">
+       <table class="offset-1 col-10 offset-1">
+       <tr class="">
+           <th class="">Foods</th>
+           <th class="">Price</th>
+           <th class="">No</th>
+           <th class="">Amount</th>
+       </tr>
+       <tr>
+           <td>Egg Puffs</td>
+           <td id="eggpuffprice">15</td>
+           <td id="preview1">
+       <input id="eggpuffno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="eggpuffamnt"></td>
+       </tr>
+       <tr>
+           <td>Chicken Puffs</td>
+           <td class="cknpuffprice">25</td>
+           <td id="preview2" >
+       <input id="cknpuffno" class="in" type="number" placeholder="0">
+           </td> 
+           <td id="cknpuffamnt"></td>
+       </tr>
+       <tr>
+           <td>Chicken</td>
+           <td class="cknprice">50</td>
+           <td id="preview3">
+           <input id="cknno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="cknamnt"></td>
+       </tr>
+       <tr>
+           <td>Briyani</td>
+           <td class="bryprice">90</td>
+           <td id="preview4">
+           <input id="bryno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="bryamnt"></td>
+       </tr>
+       <tr>
+           <td>Veg Rice</td>
+           <td class="vgrcprice">60</td>
+           <td id="preview5">
+           <input id="vgrcno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="vgrcamnt"></td>
+       </tr>
+       <tr>
+           <td>Chicken Rice</td>
+           <td class="cknrcprice">85</td>
+           <td id="preview6">
+           <input id="cknrcno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="cknrcamnt"></td>
+       </tr>
+       <tr>
+           <td>Parotta</td>
+           <td id="parotprice">15</td>
+           <td id="preview7">
+           <input id="parotno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="parotamnt"></td>
+       </tr>
+       <tr>
+           <td>Dosa</td>
+           <td class="dosaprice">10</td>
+           <td id="preview8">
+           <input id="dosano" class="in" type="number" placeholder="0">
+           </td>
+           <td id="dosaamnt"></td>
+       </tr>
+       <tr>
+           <td>Chappathi</td>
+           <td class="cptiprice">15</td>
+           <td id="preview9">
+           <input id="cptino" class="in" type="number" placeholder="0">
+           </td>
+           <td id="cptiamnt"></td>
+       </tr>
+       <tr>
+           <td>Idly</td>
+           <td class="idlyprice">7</td>
+           <td id="preview10">
+           <input id="idlyno" class="in" type="number" placeholder="0">
+           </td>
+           <td id="idlyamnt"></td>
+       </tr>
+   </table>
+</div>
+<div id="review" class="review">
+    <button onclick="submit()" class="offset-3 col-6 offset-3">Review and place order</button>
+</div>
+<div id="pay" class="pay">
+    <p class="offset-4">Total amount:<span id="total"></span></p>
+    <button class="offset-2 col-2 offset-2"><a href="./mjmain.html"> EDIT</a></button>
+    <button onclick="pay()" class="offset-2 col-4 offset-1"><a href="./mjpay.html"> PAY : <span id="tota"></span>Rs</a></button>
+</div>
+
+<h3 id="pp">* Enter How much food you need and "CLICK" Review and place order</h3>
+   <h3>* Then conform your food and Amount and "CLICK" Conform and Place order</h3>
+   </div>
+   <div class="foot">
+       <h4>Conduct Us</h4>
+       <p>mjfoods@gmail.com</p>
+       <p>9345683027</p>
+   </div>
+</body>
+<script src="../boot/bootstrap.min.js"></script>
+<script>
+
+        var price=["eggp","cknpp","cknp","bryp","vgrcp","cknrcp","parotp","dosap","cptip","idlyp"]
+        var item=["eggpuffno","cknpuffno","cknno","bryno","vgrcno","cknrcno","parotno","dosano","cptino","idlyno"]
+        var amount=["eggpuffamnt","cknpuffamnt","cknamnt","bryamnt","vgrcamnt","cknrcamnt","parotamnt","dosaamnt","cptiamnt","idlyamnt"]
+        var ampri=[15,25,50,90,60,85,15,10,15,7]
+        var final=["egga","cknpa","ckna","brya","vgrca","cknrca","parota","dosaa","cptia","idlya"]
+        var pre=["preview1","preview2","preview3","preview4","preview5","preview6","preview7","preview8","preview9","preview10"]
+    function submit(){
+        var pay=document.getElementById("pay");
+        var review=document.getElementById("review");
+        pay.classList.add("paypop");
+        pay.classList.remove("pay");
+        review.classList.add("reviewpop");
+        review.classList.remove("review");
+
+        
+        var total=0;
+        for(var i=0;i<=9;i++){
+            inp=document.getElementById(item[i]);
+            inp.classList.add("inpop");
+            inp.classList.remove("in");
+        
+           price[i]=document.getElementById(item[i]).value;
+           final[i]=price[i]*ampri[i];
+           document.getElementById(amount[i]).innerHTML=final[i];
+        
+           total=total+final[i];
+        }
+        for(var i=0;i<=9;i++){
+        document.getElementById(pre[i]).innerHTML=price[i];
+        }
+        
+        document.getElementById("total").innerHTML=total;
+        document.getElementById("tota").innerHTML=total; 
+        return a= submit;  
+}
+    
+
+    
+ </script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Foldit:wght@500&family=Poppins&family=Roboto+Condensed&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./bootstrap.min.css"> 
+<style type="text/css">
+    *{
+        margin:0px;
+        padding:0px;
+        font-family:poppins;
+    }
+    :root{
+        --red:#FF1D46;
+        --black:#202020;
+        --white:#FFFFFF;
+        --yellow:#FFC815;
+    }
+    body{
+        text-align: center;
+    }
+    img{
+            position:fixed;
+            left: 0;
+            width:100%;
+            height:810px;
+            filter:blur(4px);
+            z-index:-1;
+    
+        }
+    .head{
+        padding:30px;
+        color: var(--white);
+    }
+    .head>h1{
+        font-size: 40px;
+        text-decoration: underline;
+    }
+    .head>h2{
+        font-size: 28px;
+        font-weight: 700;
+    }
+    .body{
+        border: 3px solid var(--yellow);
+        color: var(--white);
+        background:linear-gradient(rgb(1, 1, 1),rgb(255, 255, 255));
+        opacity: 0.6;
+        border-radius: 20px;
+        height: 150px;
+        margin-bottom: 40px;
+    }
+    .body>h3,.foot>h3{
+        padding:10px;
+        font-weight: 800;
+    }
+    button{
+        padding: 10px;
+        border: 3px solid var(--black);
+        background-color: var(--yellow);
+        color: var(--black);
+        border-radius: 14px;
+        font-weight: 800;
+        margin: 10px;
+    }
+    button:hover{
+        background-color: var(--red);
+        color: var(--white);
+    }
+    .foot{
+        border: 3px solid var(--yellow);
+        color: var(--white);
+        background:linear-gradient(rgb(71, 71, 71),rgb(255, 255, 255));
+        opacity: 0.8;
+        border-radius: 20px;
+        height: 270px;
+        visibility: visible;
+    }
+    .foot1{
+        visibility: hidden;
+    }
+    .submit{
+        background-color: var(--red);
+        color: var(--white);
+    }
+    .submit:hover{
+        background-color: var(--red);
+    }
+    a{
+        text-decoration:none;
+        text-transform: capitalize;
+        font-weight:900;
+        font-size: larger;
+        color: var(--white);
+    }
+    </style>
+</head>
+<body>
+    <img src="./boul.jpg" alt="">
+    <div class="head">
+        <h1>Mj Restaurant</h1>
+        <h2>Seatings</h2>
+    </div>
+    <div class="body offset-2 col-8 offset-2 offset-xl-4 col-xl-4 offse-xl-4">
+        <h3>Choose your row.</h3>
+        <div class="row1">
+            <button id="row" onclick="row(1)">1</button>
+            <button id="row" onclick="row(2)">2</button>
+            <button id="row" onclick="row(3)">3</button>
+            <button id="row" onclick="row(4)">4</button> 
+        </div>
+    </div>
+    <div id="foot" class="foot1 offset-1 col-10 offset-1 offset-xl-4 col-xl-4 offse-xl-4">
+        <h3>Choose seating.</h3>
+        <div class="fstfive">
+            <button onclick="colnm(1)"><span id="colmn1"></span>1</button>
+            <button onclick="colmn(2)"><span id="colmn2"></span>2</button>
+            <button onclick="colmn(3)"><span id="colmn3"></span>3</button>
+            <button onclick="colmn(4)"><span id="colmn4"></span>4</button>
+            <button onclick="colmn(5)"><span id="colmn5"></span>5</button>
+        </div>
+        <div class="nxtfive">
+            <button onclick="colmn(6)"><span id="colmn6"></span>6</button>
+            <button onclick="colmn(7)"><span id="colmn7"></span>7</button>
+            <button onclick="colmn(8)"><span id="colmn8"></span>8</button>
+            <button onclick="colmn(9)"><span id="colmn9"></span>9</button>
+            <button onclick="colmn(10)"><span id="colmn10"></span>10</button>
+        </div>
+        <button onclick="seat()" class="submit col-5"><a href="./mjmain.html"> Seat No = <span id="seatr"></span><span id="seatc"></span></a> </button>
+    </div>
+</body>
+<script>
+    var column=["colmn1","colmn2","colmn3","colmn4","colmn5","colmn6","colmn7","colmn8","colmn9","colmn10",]
+    var pop=document.getElementById("foot");
+    function row(a){
+        for(var i=0;i<10;i++){
+            document.getElementById(column[i]).innerHTML=a+"P";
+        }
+        document.getElementById("seatr").innerHTML=a+"P";
+        pop.classList.add("foot");
+        pop.classList.remove("foot1");
+    }
+    function colmn(a){
+        document.getElementById("seatc").innerHTML=a;
+    }
+</script>
+</html>

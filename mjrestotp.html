@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Foldit:wght@500&family=Poppins&family=Roboto+Condensed&family=Tilt+Neon&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./bootstrap.min.css">   
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+        font-family:poppins;
+    }
+    :root{
+        --red:#FF1D46;
+        --black:#202020;
+        --white:#FFFFFF;
+        --yellow:#FFC815;
+    }
+    body{
+        background-color:var(--white);
+    }
+    img{
+            position:fixed;
+            width:100%;
+            height:810px;
+            filter:blur(4px);
+            z-index:-1;
+    
+        }
+ /*   .head{
+        height:300px;
+        width:100%;
+        background-color:black;
+        opacity:0.6;
+        border:3px solid black;
+        border-radius:0px 0px 150% 50%;
+        visibility: visible;
+    }
+    .head1{
+        visibility:hidden;
+    }
+    .head>img{
+        display:block;
+        margin:20% auto;
+        height:150px;  
+    } */
+    .foot{
+        text-align:center;
+        padding:10px 0;
+        visibility: visible;
+        background-color: var(--white);
+        position: relative;
+        top: 140px;
+        border: 2px solid var(--black);
+        border-radius: 20px;
+        opacity: 0.7;
+    }
+    .foot1{
+        visibility:hidden;
+    }
+    .foot>h1{
+        padding:10px 0 0 0;
+        font-weight: 600;
+    }
+    .foot>h4{
+        padding:5px 0;
+        color:var(--red);
+        font-weight: 500;
+        font-size: 18px;
+    }
+    .foot>h3{
+        padding:5px 0;
+        font-weight: 700;
+    }
+    .otpin>input{
+        height:40px;
+        width:10%;
+        text-align:center;
+        outline:none;
+        border:3px solid var(--black);
+        background-color:var(--yellow);
+        color: var(--black);
+        font-weight: 900;
+        border-radius:10px;
+    }
+    input::-webkit-inner-spin-button,input::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+    }
+    .otpin{
+        padding:20px 0;
+    }
+    .foot>.otp{
+        color: var(--black);
+        padding:10px;
+        border:5px solid var(--black);
+        border-radius:10px;
+        background-color:var(--yellow);
+        font-size:18px;
+        font-weight: 900;
+    }
+    .foot>button{
+        background-color:black;
+        border:2px solid black;
+        color:white;
+        padding:10px 8px;
+        border-radius:30px;
+        font-size:25px;
+        font-weight:900;
+        margin:30px 0;
+        outline:none;
+    }
+    .verify{
+        background-color:var(--black);
+        color:var(--white);
+        position: absolute;
+        top:40%;
+        border-radius:10px;
+        padding:10px 50px;
+        border:2px solid var(--yellow);
+        opacity: 0.7;
+        visibility:hidden;
+    }
+    .verify>h2{
+        padding:10px 0px;
+    }
+    .verify>button{
+        color: white;
+        padding:10px;
+        border:1px solid white;
+        border-radius:5px;
+        margin:10px 0;
+        background-color:var(--black);
+        font-size:15px;
+    }
+    
+    a{text-decoration:none;color:white;}
+    .verifypop{
+        visibility: visible;
+        text-align:center;
+        box-shadow:0 5px 15px black;
+    } 
+     
+</style>
+</head>
+<body>
+    <img src="./burger.jpg" alt="">
+    <div class="foot offset-2 col-8 offset-2 offset-xl-4 col-xl-4 offse-xl-4" id="foot">
+        <h1>OTP Verification</h1>
+        <h4>Enter the OTP sent to your number</h3>
+        <div class="otpin">
+            <input type="number" >
+            <input type="number">
+            <input type="number">
+            <input type="number">
+        </div>
+        <h4>Don't Recieve OTP ?</h3>
+        <h3>Resend OTP</h1>
+        <button class="otp" onclick="mvp()">Verify OTP</button> 
+    </div>
+    <div class="verify offset-2 col-8 offset-2 offset-xl-4 col-xl-4 offse-xl-4" id="popup">
+            <h2>Welcome</h2>
+            <h4>Verified Successfully</h4>
+            <button onclick="close()"><a href="./mjseats.html">ok</a></button>
+    </div>
+</body>
+<script >
+    let popup=document.getElementById("popup");
+    let foot=document.getElementById("foot");
+    function mvp(){
+    popup.classList.add("verifypop");
+    foot.classList.add("foot1");
+    foot.classList.remove("foot");
+    }
+</script>
+</html>
